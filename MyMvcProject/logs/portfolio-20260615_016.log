@@ -1,0 +1,4 @@
+2026-06-15 13:09:58.408 +05:30 [INF] Database initialized successfully
+2026-06-15 13:09:59.025 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-06-15 13:12:39.015 +05:30 [ERR] Failed to send email. Status: "Unauthorized", Body: {"errors":[{"message":"The provided authorization grant is invalid, expired, or revoked","field":null,"help":null}]}
+2026-06-15 13:12:39.033 +05:30 [WRN] Contact form saved but email failed from techportal033@gmail.com

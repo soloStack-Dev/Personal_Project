@@ -1,0 +1,163 @@
+@{
+    ViewData["Title"] = "About";
+    ViewData["Description"] = "Learn more about Faleel H - AI .NET Full Stack Developer. Education, skills, and professional journey.";
+}
+
+<section class="page-hero about-hero">
+    <div class="container">
+        <div class="page-header" data-aos="fade-up">
+            <span class="page-subtitle">Get to Know Me</span>
+            <h1 class="page-title">About <span class="text-gradient">Me</span></h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">About</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="about-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4" data-aos="fade-right">
+                <div class="profile-card">
+                    <div class="profile-image-wrapper">
+                        <img src="~/images/faleel_img.jpeg" alt="Faleel H" class="profile-image" />
+                        <div class="profile-glow"></div>
+                    </div>
+                    <h3 class="profile-name">Faleel H</h3>
+                    <p class="profile-title">AI .NET Full Stack Developer</p>
+
+                    <div class="profile-info">
+                        <div class="info-item">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>Thiruvarur, Tamil Nadu, India</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa-solid fa-envelope"></i>
+                            <a href="mailto:faleelmr4@gmail.com">faleelmr4@gmail.com</a>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa-solid fa-phone"></i>
+                            <a href="tel:+919790933818">+91 9790933818</a>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa-brands fa-linkedin"></i>
+                            <a href="https://linkedin.com/in/faleel-h-81b8a2357" target="_blank">LinkedIn Profile</a>
+                        </div>
+                    </div>
+
+                    <div class="profile-languages">
+                        <h6><i class="fa-solid fa-language"></i> Languages</h6>
+                        <div class="language-item">
+                            <span class="language-name">English</span>
+                            <span class="language-level proficient">Proficient</span>
+                        </div>
+                        <div class="language-item">
+                            <span class="language-name">Tamil</span>
+                            <span class="language-level native">Native</span>
+                        </div>
+                    </div>
+
+                    <a href="~/files/Faleel_resume.pdf" class="btn btn-gradient btn-download" download>
+                        <i class="fa-solid fa-download"></i> Download Resume
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-8">
+                <div class="about-block" data-aos="fade-up">
+                    <h2 class="block-title"><i class="fa-solid fa-road"></i> My Journey</h2>
+                    <div class="about-text">
+                        <p>
+                            I'm <strong>Faleel H</strong>, a passionate AI .NET Full Stack Developer based in
+                            <strong>Thiruvarur, Tamil Nadu, India</strong>. Currently pursuing my
+                            <strong>Bachelor of Computer Application (BCA)</strong> at
+                            <strong>Bharathidasan University</strong> (2023-2026), I've dedicated my academic
+                            journey to mastering the intersection of artificial intelligence and enterprise web development.
+                        </p>
+                        <p>
+                            Through hands-on personal projects, I've built production-ready applications that solve
+                            real-world problems. My approach combines solid software engineering fundamentals with
+                            cutting-edge AI capabilities — creating systems that are not just functional, but intelligent.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="about-block" data-aos="fade-up" data-aos-delay="100">
+                    <h2 class="block-title"><i class="fa-solid fa-lightbulb"></i> Why AI + .NET?</h2>
+                    <div class="about-text">
+                        <p>
+                            I believe the convergence of traditional enterprise architecture and modern AI creates
+                            the most impactful software. While billion-parameter LLMs grab headlines, I focus on
+                            <strong>practical SLM implementations</strong> that deliver real business value — faster,
+                            cheaper, and fully private.
+                        </p>
+                        <blockquote class="about-quote">
+                            "The best AI solution isn't the biggest model — it's the one that solves the problem
+                            efficiently within your constraints."
+                        </blockquote>
+                        <p>
+                            My expertise in <strong>RAG (Retrieval-Augmented Generation)</strong>,
+                            <strong>Microsoft Agent Framework</strong>, and <strong>local LLM deployment</strong>
+                            enables me to build AI systems that enterprises can actually deploy without worrying
+                            about data privacy or API costs.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="about-block" data-aos="fade-up" data-aos-delay="200">
+                    <h2 class="block-title"><i class="fa-solid fa-graduation-cap"></i> Education</h2>
+                    <div class="education-card">
+                        <div class="education-icon">
+                            <i class="fa-solid fa-university"></i>
+                        </div>
+                        <div class="education-details">
+                            <h4>Bharathidasan University</h4>
+                            <p class="degree">Bachelor of Computer Application (BCA)</p>
+                            <p class="duration"><i class="fa-regular fa-calendar"></i> June 2023 — May 2026</p>
+                            <p class="location"><i class="fa-solid fa-location-dot"></i> Thiruvarur, Tamil Nadu</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-block" data-aos="fade-up" data-aos-delay="300">
+                    <h2 class="block-title"><i class="fa-solid fa-star"></i> Core Competencies</h2>
+                    <div class="competencies-grid">
+                        <div class="competency-card">
+                            <div class="competency-icon">
+                                <i class="fa-solid fa-arrows-rotate"></i>
+                            </div>
+                            <h5>Adaptability</h5>
+                            <p>Quickly learning and adapting to new technologies and frameworks</p>
+                        </div>
+                        <div class="competency-card">
+                            <div class="competency-icon">
+                                <i class="fa-solid fa-bullseye"></i>
+                            </div>
+                            <h5>Disciplined & Self-Motivated</h5>
+                            <p>Driven to deliver quality work without constant supervision</p>
+                        </div>
+                        <div class="competency-card">
+                            <div class="competency-icon">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </div>
+                            <h5>Attention to Detail</h5>
+                            <p>Writing clean, maintainable, and well-documented code</p>
+                        </div>
+                        <div class="competency-card">
+                            <div class="competency-icon">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <h5>Time Management</h5>
+                            <p>Efficiently prioritizing tasks and meeting deadlines</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

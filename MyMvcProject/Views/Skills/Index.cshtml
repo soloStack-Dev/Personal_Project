@@ -1,0 +1,72 @@
+@model List<SkillViewModel>
+
+@{
+    ViewData["Title"] = "Skills";
+    ViewData["Description"] = "Technical skills of Faleel H - Frontend, Backend, Database, AI, and Tools.";
+}
+
+<section class="page-hero skills-hero">
+    <div class="container">
+        <div class="page-header" data-aos="fade-up">
+            <span class="page-subtitle">My Expertise</span>
+            <h1 class="page-title">Technical <span class="text-gradient">Skills</span></h1>
+            <p class="page-description">Technologies and tools I work with</p>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Skills</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="skills-content">
+    <div class="container">
+        <div class="skills-grid">
+            @{
+                var grouped = Model.GroupBy(s => s.Category).OrderBy(g => g.Key).ToList();
+            }
+            @for (int i = 0; i < grouped.Count; i++)
+            {
+                var category = grouped[i];
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="@(i * 100)">
+                    <div class="category-header">
+                        <span class="category-badge">@category.Key.ToString().Replace("_", " & ")</span>
+                    </div>
+                    <div class="skill-cards">
+                        @foreach (var skill in category.OrderByDescending(s => s.ProficiencyLevel))
+                        {
+                            <div class="skill-card">
+                                <div class="skill-icon">
+                                    <i class="@(skill.IconClass ?? "fa-solid fa-code")"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h5 class="skill-name">@skill.Name</h5>
+                                    <div class="skill-progress">
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: @skill.ProficiencyLevel%"></div>
+                                        </div>
+                                        <span class="skill-percent">@skill.ProficiencyLevel%</span>
+                                    </div>
+                                </div>
+                                @if (!string.IsNullOrEmpty(skill.ResourceLink))
+                                {
+                                    <a href="@skill.ResourceLink" target="_blank" class="skill-link" title="Learn more">
+                                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                    </a>
+                                }
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+
+        <div class="text-center mt-5">
+            <button class="btn btn-add-item" data-bs-toggle="modal" data-bs-target="#addSkillModal">
+                <i class="fa-solid fa-plus"></i> Add New Skill
+            </button>
+        </div>
+    </div>
+</section>

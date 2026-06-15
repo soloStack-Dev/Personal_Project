@@ -1,0 +1,71 @@
+@model List<CourseViewModel>
+
+@{
+    ViewData["Title"] = "Courses";
+    ViewData["Description"] = "Curated courses and tutorials on C#, .NET, Angular, AI, and emerging technologies.";
+}
+
+<section class="page-hero courses-hero">
+    <div class="container">
+        <div class="page-header" data-aos="fade-up">
+            <span class="page-subtitle">Learning Resources</span>
+            <h1 class="page-title">My <span class="text-gradient">Courses</span></h1>
+            <p class="page-description">Curated courses and tutorials I've found valuable</p>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Courses</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="courses-content">
+    <div class="container">
+        <div class="courses-grid">
+            @foreach (var course in Model)
+            {
+                <div class="course-card" data-aos="fade-up" data-aos-delay="100">
+                    <a href="@course.YouTubeLink" target="_blank" class="course-link">
+                        <div class="course-thumbnail-wrapper">
+                            <img src="@(course.ThumbnailUrl ?? "/images/youtube-placeholder.jpg")"
+                                 alt="@course.Title"
+                                 class="course-thumbnail"
+                                 loading="lazy"
+                                 onerror="this.src='/images/youtube-placeholder.jpg'" />
+                            <div class="course-overlay">
+                                <div class="play-button">
+                                    <i class="fa-solid fa-play"></i>
+                                </div>
+                                <div class="youtube-badge">
+                                    <i class="fa-brands fa-youtube"></i> YouTube
+                                </div>
+                            </div>
+                            @if (!string.IsNullOrEmpty(course.Duration))
+                            {
+                                <span class="course-duration">@course.Duration</span>
+                            }
+                        </div>
+                        <div class="course-info">
+                            <h4 class="course-title">@course.Title</h4>
+                            @if (!string.IsNullOrEmpty(course.Description))
+                            {
+                                <p class="course-description">@course.Description</p>
+                            }
+                            <div class="course-meta">
+                                <span class="watch-text">Watch on YouTube <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            }
+        </div>
+
+        <div class="text-center mt-5">
+            <button class="btn btn-add-item" data-bs-toggle="modal" data-bs-target="#addCourseModal">
+                <i class="fa-solid fa-plus"></i> Add New Course
+            </button>
+        </div>
+    </div>
+</section>

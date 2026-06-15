@@ -1,0 +1,86 @@
+@model List<BlogPostViewModel>
+
+@{
+    ViewData["Title"] = "Blog";
+    ViewData["Description"] = "Insights and updates on C#, .NET, Angular, AI, and emerging technologies for developers.";
+}
+
+<section class="page-hero blog-hero">
+    <div class="container">
+        <div class="page-header" data-aos="fade-up">
+            <span class="page-subtitle">Insights & Updates</span>
+            <h1 class="page-title">Developer <span class="text-gradient">Blog</span></h1>
+            <p class="page-description">Thoughts on C#, .NET, Angular, AI, and emerging tech</p>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Blog</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="blog-content">
+    <div class="container">
+        <div class="blog-grid-full">
+            @foreach (var post in Model)
+            {
+                <article class="blog-card-full" data-aos="fade-up" data-aos-delay="100">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="blog-image-wrapper">
+                                @if (!string.IsNullOrEmpty(post.ImagePaths))
+                                {
+                                    var firstImage = post.ImagePaths.Split(',', StringSplitOptions.RemoveEmptyEntries).FirstOrDefault();
+                                    <img src="@(firstImage ?? "/images/placeholder-blog.jpg")"
+                                         alt="@post.Title"
+                                         class="blog-image"
+                                         loading="lazy" />
+                                }
+                                else
+                                {
+                                    <img src="/images/placeholder-blog.jpg"
+                                         alt="@post.Title"
+                                         class="blog-image" />
+                                }
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="blog-content-inner">
+                                @if (!string.IsNullOrEmpty(post.Tags))
+                                {
+                                    <div class="blog-tags">
+                                        @foreach (var tag in post.Tags.Split(',', StringSplitOptions.RemoveEmptyEntries).Take(3))
+                                        {
+                                            <span class="blog-tag">#@tag.Trim()</span>
+                                        }
+                                    </div>
+                                }
+                                <h3 class="blog-title">@post.Title</h3>
+                                <p class="blog-excerpt">@post.Description</p>
+                                <div class="blog-meta">
+                                    <span class="blog-date">
+                                        <i class="fa-regular fa-calendar"></i> @post.PublishDate.ToString("MMMM dd, yyyy")
+                                    </span>
+                                    @if (!string.IsNullOrEmpty(post.ExternalLink))
+                                    {
+                                        <a href="@post.ExternalLink" target="_blank" class="read-more-link">
+                                            Read More <i class="fa-solid fa-arrow-right"></i>
+                                        </a>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            }
+        </div>
+
+        <div class="text-center mt-5">
+            <button class="btn btn-add-item" data-bs-toggle="modal" data-bs-target="#addBlogModal">
+                <i class="fa-solid fa-plus"></i> Add New Blog Post
+            </button>
+        </div>
+    </div>
+</section>
