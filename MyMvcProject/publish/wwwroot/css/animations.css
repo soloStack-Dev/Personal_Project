@@ -1,0 +1,69 @@
+/* AOS Override */
+[data-aos] {
+    transition-timing-function: ease-out-cubic;
+}
+
+/* Card Hover Animations */
+.project-card,
+.blog-card,
+.course-card,
+.skill-category {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Button Animations */
+.btn-gradient {
+    background-size: 200% auto;
+    transition: all 0.3s ease;
+}
+
+.btn-gradient:hover {
+    background-position: right center;
+}
+
+/* Theme Transition */
+body,
+#mainNav,
+.card,
+.modal-content,
+.form-control {
+    transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+}
+
+/* Loading Spinner */
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.fa-spin {
+    animation: spin 1s linear infinite;
+}
+
+/* Fade In Up Animation for page load */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-content {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Staggered animation for skill cards */
+.skill-card {
+    opacity: 0;
+    animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.skill-card:nth-child(1) { animation-delay: 0.1s; }
+.skill-card:nth-child(2) { animation-delay: 0.2s; }
+.skill-card:nth-child(3) { animation-delay: 0.3s; }
+.skill-card:nth-child(4) { animation-delay: 0.4s; }
+.skill-card:nth-child(5) { animation-delay: 0.5s; }
