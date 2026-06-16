@@ -17,8 +17,7 @@ builder.Host.UseSerilog();
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"),
-        sqlOptions => sqlOptions.CommandTimeout(5)));
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddScoped<IEmailService, EmailService>();
 builder.Services.AddScoped<IImageService, ImageService>();
@@ -55,7 +54,7 @@ app.Lifetime.ApplicationStarted.Register(() =>
             await Task.Delay(1000);
             using var scope = app.Services.CreateScope();
             var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-            await dbContext.Database.MigrateAsync();
+            await dbContext.Database.EnsureCreatedAsync();
             await DbSeeder.SeedAsync(dbContext);
             Log.Information("Database initialized successfully");
         }
