@@ -1,0 +1,11 @@
+**/.git
+**/.vs
+**/bin
+**/obj
+**/logs
+**/ErrorLogs
+**/publish
+**/node_modules
+**/.dockerignore
+Dockerfile
+README.md

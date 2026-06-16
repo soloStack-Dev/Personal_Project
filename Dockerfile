@@ -1,9 +1,11 @@
 FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 WORKDIR /src
 
-COPY . .
+COPY MyMvcProject/MyMvcProject.csproj MyMvcProject/
+RUN dotnet restore MyMvcProject/MyMvcProject.csproj
 
-RUN dotnet publish -c Release -o /app/publish
+COPY . .
+RUN dotnet publish MyMvcProject/MyMvcProject.csproj -c Release -o /app/publish --no-restore
 
 FROM mcr.microsoft.com/dotnet/aspnet:10.0
 WORKDIR /app
