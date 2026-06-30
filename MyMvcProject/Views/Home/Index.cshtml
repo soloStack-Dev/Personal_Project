@@ -180,7 +180,7 @@
                                 <div class="project-links">
                                     @if (!string.IsNullOrEmpty(Model.FeaturedProject.GitHubLink))
                                     {
-                                        <a href="https://github.com/soloStack-Dev" target="_blank" class="project-link">
+                                        <a href="@Model.FeaturedProject.GitHubLink" target="_blank" class="project-link">
                                             <i class="fa-brands fa-github"></i>
                                         </a>
                                     }
@@ -233,7 +233,7 @@
                             <div class="project-links">
                                 @if (!string.IsNullOrEmpty(project.GitHubLink))
                                 {
-                                    <a href="https://github.com/soloStack-Dev" target="_blank" class="project-link" title="View on GitHub">
+                                    <a href="@project.GitHubLink" target="_blank" class="project-link" title="View on GitHub">
                                         <i class="fa-brands fa-github"></i>
                                     </a>
                                 }
