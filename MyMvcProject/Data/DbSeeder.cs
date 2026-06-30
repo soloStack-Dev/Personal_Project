@@ -56,7 +56,7 @@ namespace Portfolio.Data
                     new()
                     {
                         Title = "Health Agent",
-                        Description = "A full-stack health symptoms adviser agent application with a .NET backend API and react client. Features intelligent health query processing, user management, and real-time data processing capabilities. The server provides robust API endpoints while the client delivers a modern, responsive user interface.",
+                        Description = "A full-stack health symptoms advicer agent application with a .NET backend API and react client. Features intelligent health query processing, user management, and real-time data processing capabilities. The server provides robust API endpoints while the client delivers a modern, responsive user interface.",
                         TechStack = "React,Zustand,TanStack Query,TypeScript,C#,.NET Web API,Entity Framework,SQL Server,Microsoft Agent Framework,Groq,Agent Skills",
                         GitHubLink = "https://github.com/soloStack-Dev/HealthAgent_client.git",
                         HostedLink = "https://healthagent-client.onrender.com/",
