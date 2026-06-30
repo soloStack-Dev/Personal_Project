@@ -14,7 +14,7 @@ namespace Portfolio.Data
                     new() { Name = "CSS3", Category = SkillCategory.Frontend, ProficiencyLevel = 85, IconClass = "fa-brands fa-css3-alt" },
                     new() { Name = "JavaScript", Category = SkillCategory.Frontend, ProficiencyLevel = 80, IconClass = "fa-brands fa-js" },
                     new() { Name = "TypeScript", Category = SkillCategory.Frontend, ProficiencyLevel = 75, IconClass = "fa-brands fa-js" },
-                    new() { Name = "Angular", Category = SkillCategory.Frontend, ProficiencyLevel = 70, IconClass = "fa-brands fa-angular" },
+                    new() { Name = "React", Category = SkillCategory.Frontend, ProficiencyLevel = 70, IconClass = "fa-brands fa-react" },
                     new() { Name = "TanStack Query", Category = SkillCategory.Frontend, ProficiencyLevel = 65, IconClass = "fa-solid fa-code" },
                     new() { Name = "Zustand", Category = SkillCategory.Frontend, ProficiencyLevel = 60, IconClass = "fa-solid fa-cubes" },
                     new() { Name = "C#", Category = SkillCategory.Backend, ProficiencyLevel = 85, IconClass = "fa-solid fa-code" },
