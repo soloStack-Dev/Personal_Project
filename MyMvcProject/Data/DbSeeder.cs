@@ -47,7 +47,7 @@ namespace Portfolio.Data
                     {
                         Title = "Enterprise Agentic RAG System",
                         Description = "Built a local, enterprise-grade RAG system using Small Language Models (SLMs) that delivers sub-second responses for proprietary knowledge retrieval. Architected full-stack solution with Angular frontend, .NET Web API backend, Ollama-hosted SLMs, Microsoft Agent Framework, Redis caching, and EF Core for data persistence. Achieved sub-second query latency on internal documents, proving SLMs outperform general LLMs for focused enterprise use cases while ensuring complete data privacy.",
-                        TechStack = "Angular,TypeScript,C#,.NET Web API,Ollama,Redis,EF Core,Microsoft Agent Framework",
+                        TechStack = "React,Zustand,TanStack Query,TypeScript,C#,.NET Web API,Ollama,Redis,EF Core,Microsoft Agent Framework,Ollama",
                         IsFeatured = true,
                         ResultHighlight = "Sub-second query latency achieved",
                         GitHubLink = "https://github.com/soloStack-Dev",
@@ -56,8 +56,8 @@ namespace Portfolio.Data
                     new()
                     {
                         Title = "Health Agent",
-                        Description = "A full-stack health agent application with a .NET backend API and Angular client. Features intelligent health query processing, user management, and real-time data processing capabilities. The server provides robust API endpoints while the client delivers a modern, responsive user interface.",
-                        TechStack = "Angular,TypeScript,C#,.NET Web API,Entity Framework,SQL Server",
+                        Description = "A full-stack health symptoms adviser agent application with a .NET backend API and react client. Features intelligent health query processing, user management, and real-time data processing capabilities. The server provides robust API endpoints while the client delivers a modern, responsive user interface.",
+                        TechStack = "React,Zustand,TanStack Query,TypeScript,C#,.NET Web API,Entity Framework,SQL Server,Microsoft Agent Framework,Groq,Agent Skills",
                         GitHubLink = "https://github.com/soloStack-Dev/HealthAgent_client.git",
                         HostedLink = "https://healthagent-client.onrender.com/",
                         ImagePath = "/images/project_two.png",
